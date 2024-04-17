@@ -1,6 +1,11 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { HomeScreen, LogInScreen, SignUpScreen } from "./src/screens";
+import {
+  CheckoutScreen,
+  HomeScreen,
+  LogInScreen,
+  SignUpScreen,
+} from "./src/screens";
 import { RootStackParamList } from "./src/types/navigation/NavTypes";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -29,6 +34,14 @@ const App = () => {
           }}
           name="LogInScreen"
           component={LogInScreen}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+            contentStyle: { backgroundColor: "#FFF" },
+          }}
+          name="CheckoutScreen"
+          component={CheckoutScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -13,6 +13,7 @@ import { CustomButton } from "../../components";
 import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { LogInScreenNavProps } from "../../types";
+import { GoBackArrow } from "../../components/GoBackArrow";
 
 export const SignUpScreen = () => {
   const { width } = useWindowDimensions();
@@ -41,12 +42,7 @@ export const SignUpScreen = () => {
           ],
         }}
       >
-        <TouchableOpacity
-          style={{ marginHorizontal: 15 }}
-          onPress={() => navigate.goBack()}
-        >
-          <AntDesign name="arrowleft" size={24} color="black" />
-        </TouchableOpacity>
+        <GoBackArrow />
         <Image
           source={require("../../../assets/welcome.png")}
           style={{
