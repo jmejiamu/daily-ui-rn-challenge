@@ -4,7 +4,10 @@ export type RootStackParamList = {
   HomeScreen: undefined;
   SignUpScreen: undefined;
   LogInScreen: undefined;
+  CheckoutScreen: undefined;
 };
+
+export type RootStackNames = NativeStackNavigationProp<RootStackParamList>;
 export type HomeScreenNavProps = NativeStackNavigationProp<
   RootStackParamList,
   "HomeScreen"
@@ -16,4 +19,8 @@ export type SignUpScreenNavProps = NativeStackNavigationProp<
 export type LogInScreenNavProps = NativeStackNavigationProp<
   RootStackParamList,
   "LogInScreen"
+>;
+export type CheckoutScreenNavProps = NativeStackNavigationProp<
+  RootStackParamList,
+  "CheckoutScreen"
 >;
