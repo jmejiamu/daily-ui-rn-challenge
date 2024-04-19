@@ -19,14 +19,13 @@ export interface Item {
 }
 
 export const Cart = ({ item, index }: Item) => {
-  console.log("🚀 ~ Cart ~ index:", index);
   const { productIcon, title, description, price } = item;
   const translateX = new Animated.Value(index! % 2 === 0 ? 500 : -500);
 
   useEffect(() => {
     Animated.timing(translateX, {
       toValue: 0,
-      duration: 1000,
+      duration: 2000,
       useNativeDriver: true,
     }).start();
   }, []);

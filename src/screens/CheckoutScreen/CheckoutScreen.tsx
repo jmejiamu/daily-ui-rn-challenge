@@ -1,8 +1,18 @@
-import { FlatList, SafeAreaView, StyleSheet, Text, View } from "react-native";
-import React from "react";
+import {
+  Animated,
+  FlatList,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
+import React, { useEffect, useState } from "react";
 import { GoBackArrow } from "../../components/GoBackArrow";
 import { AntDesign } from "@expo/vector-icons";
 import { Cart, Item, ProductDetails } from "../../components/Cart/Cart";
+import { CustomButton } from "../../components";
 
 const productList: Array<ProductDetails> = [
   {
@@ -23,12 +33,12 @@ const productList: Array<ProductDetails> = [
     description: "Description",
     price: 11.99,
   },
-  // {
-  //   productIcon: "🍔",
-  //   title: "Burger",
-  //   description: "Description",
-  //   price: 12.99,
-  // },
+  {
+    productIcon: "🍔",
+    title: "Burger",
+    description: "Description",
+    price: 12.99,
+  },
   // {
   //   productIcon: "🍟",
   //   title: "Fries",
@@ -67,6 +77,15 @@ const productList: Array<ProductDetails> = [
 ];
 
 export const CheckoutScreen = () => {
+  const [fadeInAnim] = useState(new Animated.Value(0));
+
+  useEffect(() => {
+    Animated.timing(fadeInAnim, {
+      toValue: 1,
+      duration: 2000,
+      useNativeDriver: true,
+    }).start();
+  }, []);
   return (
     <SafeAreaView>
       <View style={styles.headerContainer}>
@@ -88,6 +107,88 @@ export const CheckoutScreen = () => {
           )}
           keyExtractor={(item) => String(item.price)}
         />
+        <Animated.View
+          style={{
+            opacity: fadeInAnim,
+            transform: [
+              {
+                translateY: fadeInAnim.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [50, 0],
+                }),
+              },
+            ],
+          }}
+        >
+          <View
+            style={{
+              flexDirection: "row",
+              backgroundColor: "#f0f0f0",
+              justifyContent: "space-between",
+              padding: 10,
+              borderRadius: 10,
+              marginVertical: 20,
+            }}
+          >
+            <TextInput
+              style={{ backgroundColor: "#f0f0f0", padding: 10 }}
+              placeholder="Promo code"
+            />
+            <CustomButton
+              text="Apply"
+              containerStyle={{
+                borderRadius: 10,
+                backgroundColor: "#454545",
+              }}
+            />
+          </View>
+          <View
+            style={{ flexDirection: "row", justifyContent: "space-between" }}
+          >
+            <Text style={{ fontWeight: "700" }}>Subtotal</Text>
+            <Text style={{ fontWeight: "700" }}>$45.99</Text>
+          </View>
+          <View
+            style={{
+              marginVertical: 15,
+              height: StyleSheet.hairlineWidth,
+              backgroundColor: "#454545",
+            }}
+          />
+          <View
+            style={{ flexDirection: "row", justifyContent: "space-between" }}
+          >
+            <Text style={{ fontWeight: "700" }}>Shipping</Text>
+            <Text style={{ fontWeight: "700" }}>$4.99</Text>
+          </View>
+          <View
+            style={{
+              marginVertical: 15,
+              height: StyleSheet.hairlineWidth,
+              backgroundColor: "#454545",
+            }}
+          />
+          <View
+            style={{ flexDirection: "row", justifyContent: "space-between" }}
+          >
+            <Text style={{ fontWeight: "700" }}>Total</Text>
+            <Text style={{ fontWeight: "700" }}>$50.98</Text>
+          </View>
+          <View
+            style={{
+              marginVertical: 15,
+              height: StyleSheet.hairlineWidth,
+              backgroundColor: "#454545",
+            }}
+          />
+          <CustomButton
+            text="Proceed to checkout"
+            containerStyle={{
+              marginVertical: 15,
+              backgroundColor: "#454545",
+            }}
+          />
+        </Animated.View>
       </View>
     </SafeAreaView>
   );
