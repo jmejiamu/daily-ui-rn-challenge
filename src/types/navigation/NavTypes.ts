@@ -5,6 +5,7 @@ export type RootStackParamList = {
   SignUpScreen: undefined;
   LogInScreen: undefined;
   CheckoutScreen: undefined;
+  CreditCard: undefined;
 };
 
 export type RootStackNames = NativeStackNavigationProp<RootStackParamList>;
@@ -23,4 +24,8 @@ export type LogInScreenNavProps = NativeStackNavigationProp<
 export type CheckoutScreenNavProps = NativeStackNavigationProp<
   RootStackParamList,
   "CheckoutScreen"
+>;
+export type CreditCardScreenNavProps = NativeStackNavigationProp<
+  RootStackParamList,
+  "CreditCard"
 >;
