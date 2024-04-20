@@ -2,6 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {
   CheckoutScreen,
+  CreditCard,
   HomeScreen,
   LogInScreen,
   SignUpScreen,
@@ -42,6 +43,14 @@ const App = () => {
           }}
           name="CheckoutScreen"
           component={CheckoutScreen}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+            contentStyle: { backgroundColor: "#FFF" },
+          }}
+          name="CreditCard"
+          component={CreditCard}
         />
       </Stack.Navigator>
     </NavigationContainer>
