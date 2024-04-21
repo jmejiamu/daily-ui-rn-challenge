@@ -4,6 +4,7 @@ import {
   CheckoutScreen,
   CreditCard,
   HomeScreen,
+  LadingScreen,
   LogInScreen,
   SignUpScreen,
 } from "./src/screens";
@@ -51,6 +52,14 @@ const App = () => {
           }}
           name="CreditCard"
           component={CreditCard}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+            contentStyle: { backgroundColor: "#FFF" },
+          }}
+          name="LandingScreen"
+          component={LadingScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

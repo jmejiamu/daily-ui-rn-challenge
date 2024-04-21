@@ -13,10 +13,15 @@ export const HomeScreen = () => {
         onPress={() => navigate.navigate("SignUpScreen")}
         text="Sign up Challenge"
       />
-      <View style={{ marginVertical: 15 }} />
+      <View style={{ margin: 10 }} />
       <Challenge
         onPress={() => navigate.navigate("CheckoutScreen")}
         text="Credit Card Checkout Challenge"
+      />
+      <View style={{ margin: 10 }} />
+      <Challenge
+        onPress={() => navigate.navigate("LandingScreen")}
+        text="Landing Screen Challenge"
       />
     </SafeAreaView>
   );
@@ -28,5 +33,10 @@ const styles = StyleSheet.create({
     fontWeight: "900",
     textAlign: "center",
     marginVertical: 15,
+  },
+  button: {
+    padding: 15,
+    alignItems: "center",
+    borderRadius: 5,
   },
 });
