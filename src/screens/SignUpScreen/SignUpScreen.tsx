@@ -7,7 +7,6 @@ import {
   useWindowDimensions,
   SafeAreaView,
   Animated,
-  TouchableOpacity,
 } from "react-native";
 import { CustomButton } from "../../components";
 import { AntDesign } from "@expo/vector-icons";
