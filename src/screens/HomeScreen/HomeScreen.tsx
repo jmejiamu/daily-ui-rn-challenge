@@ -23,6 +23,11 @@ export const HomeScreen = () => {
         onPress={() => navigate.navigate("LandingScreen")}
         text="Landing Screen Challenge"
       />
+      <View style={{ margin: 10 }} />
+      <Challenge
+        onPress={() => navigate.navigate("CalculatorScreen")}
+        text="Calculator Challenge"
+      />
     </SafeAreaView>
   );
 };
