@@ -8,6 +8,7 @@ import {
   HomeScreen,
   LadingScreen,
   LogInScreen,
+  ProfileScreen,
   SignUpScreen,
 } from "./src/screens";
 import { RootStackParamList } from "./src/types/navigation/NavTypes";
@@ -78,6 +79,14 @@ const App = () => {
           }}
           name="AppIconScreen"
           component={AppIconScreen}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+            contentStyle: { backgroundColor: "#FFF" },
+          }}
+          name="ProfileScreen"
+          component={ProfileScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

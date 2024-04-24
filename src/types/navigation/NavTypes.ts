@@ -9,6 +9,7 @@ export type RootStackParamList = {
   LandingScreen: undefined;
   CalculatorScreen: undefined;
   AppIconScreen: undefined;
+  ProfileScreen: undefined;
 };
 
 export type RootStackNames = NativeStackNavigationProp<RootStackParamList>;
@@ -43,4 +44,8 @@ export type CalculatorScreenNavProps = NativeStackNavigationProp<
 export type AppIconScreenNavProps = NativeStackNavigationProp<
   RootStackParamList,
   "AppIconScreen"
+>;
+export type ProfileScreenNavProps = NativeStackNavigationProp<
+  RootStackParamList,
+  "ProfileScreen"
 >;
