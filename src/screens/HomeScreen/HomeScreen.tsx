@@ -28,6 +28,11 @@ export const HomeScreen = () => {
         onPress={() => navigate.navigate("CalculatorScreen")}
         text="Calculator Challenge"
       />
+      <View style={{ margin: 10 }} />
+      <Challenge
+        onPress={() => navigate.navigate("AppIconScreen")}
+        text="App Icon Challenge"
+      />
     </SafeAreaView>
   );
 };

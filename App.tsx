@@ -1,6 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {
+  AppIconScreen,
   CalculatorScreen,
   CheckoutScreen,
   CreditCard,
@@ -69,6 +70,14 @@ const App = () => {
           }}
           name="CalculatorScreen"
           component={CalculatorScreen}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+            contentStyle: { backgroundColor: "#FFF" },
+          }}
+          name="AppIconScreen"
+          component={AppIconScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
