@@ -69,7 +69,7 @@ export const ProfileScreen = () => {
   }).start();
 
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: "#010205" }}>
+    <ScrollView style={styles.mainContainer}>
       <Animated.View
         style={{
           opacity: fadeAnim,
@@ -84,18 +84,11 @@ export const ProfileScreen = () => {
         }}
       >
         <View>
-          <View
-            style={{
-              position: "absolute",
-              top: 50,
-              left: 10,
-              zIndex: 1,
-            }}
-          >
+          <View style={styles.goBackContainer}>
             <GoBackArrow color="white" />
           </View>
           <Image
-            style={{ height: 400, width: "100%" }}
+            style={styles.imgStyle}
             source={require("../../../assets/profile-pic.jpg")}
           />
           <LinearGradient
@@ -103,52 +96,25 @@ export const ProfileScreen = () => {
             style={styles.gradient}
           />
         </View>
-        <Text style={[styles.userTextStyle]}>Madona Dev</Text>
+        <Text style={styles.userTextStyle}>Madona Dev</Text>
         <Text style={styles.userSubTextStyle}>React Native developer</Text>
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "center",
-            marginVertical: 15,
-          }}
-        >
+        <View style={styles.iconContainer}>
           <AntDesign name="linkedin-square" size={26} color="#fff" />
           <View style={{ margin: 10 }} />
           <Fontisto name="instagram" size={26} color="#fff" />
           <View style={{ margin: 10 }} />
           <AntDesign name="twitter" size={26} color="#fff" />
         </View>
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            marginHorizontal: 25,
-          }}
-        >
+        <View style={styles.btnMainContainer}>
           <CustomButton text="Edit Profile" containerStyle={{ flex: 1 }} />
           <View style={{ margin: 10 }} />
           <CustomButton
             text="Share Profile"
-            containerStyle={{
-              backgroundColor: "transparent",
-              borderWidth: 1,
-              borderColor: "#6C63FF",
-              // flex: 1,
-            }}
+            containerStyle={styles.shareBtnStyle}
             textStyle={{ color: "#6C63FF" }}
           />
         </View>
-        <Text
-          style={{
-            color: "#fff",
-            marginHorizontal: 25,
-            marginVertical: 15,
-            fontSize: 18,
-            fontWeight: "bold",
-          }}
-        >
-          Projects
-        </Text>
+        <Text style={styles.projectTextStyle}>Projects</Text>
         <View style={{ marginLeft: 15 }}>
           <FlatList
             data={productList}
@@ -158,39 +124,14 @@ export const ProfileScreen = () => {
             renderItem={({ item }) => (
               <TouchableOpacity
                 activeOpacity={0.7}
-                style={{
-                  marginHorizontal: 10,
-                  backgroundColor: "#232832",
-                  height: 60,
-                  width: 60,
-                  justifyContent: "center",
-                  borderRadius: 10,
-                }}
+                style={styles.projectContainer}
               >
-                <Text
-                  style={{
-                    color: "#fff",
-                    fontSize: 25,
-                    textAlign: "center",
-                  }}
-                >
-                  {item.projectIcon}
-                </Text>
+                <Text style={styles.iconStyle}>{item.projectIcon}</Text>
               </TouchableOpacity>
             )}
           />
         </View>
-        <Text
-          style={{
-            color: "#fff",
-            marginHorizontal: 25,
-            marginVertical: 15,
-            fontSize: 18,
-            fontWeight: "bold",
-          }}
-        >
-          About
-        </Text>
+        <Text style={styles.aboutHeader}>About</Text>
         <View style={{ marginHorizontal: 25 }}>
           <Text
             style={[
@@ -208,6 +149,62 @@ export const ProfileScreen = () => {
 };
 
 const styles = StyleSheet.create({
+  aboutHeader: {
+    color: "#fff",
+    marginHorizontal: 25,
+    marginVertical: 15,
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  iconStyle: {
+    color: "#fff",
+    fontSize: 25,
+    textAlign: "center",
+  },
+  projectContainer: {
+    marginHorizontal: 10,
+    backgroundColor: "#232832",
+    height: 60,
+    width: 60,
+    justifyContent: "center",
+    borderRadius: 10,
+  },
+  projectTextStyle: {
+    color: "#fff",
+    marginHorizontal: 25,
+    marginVertical: 15,
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  shareBtnStyle: {
+    backgroundColor: "transparent",
+    borderWidth: 1,
+    borderColor: "#6C63FF",
+  },
+  btnMainContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginHorizontal: 25,
+  },
+  iconContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    marginVertical: 15,
+  },
+  imgStyle: {
+    height: 400,
+    width: "100%",
+  },
+  goBackContainer: {
+    position: "absolute",
+    top: 50,
+    left: 10,
+    zIndex: 1,
+  },
+  mainContainer: {
+    flex: 1,
+    backgroundColor: "#010205",
+  },
   userSubTextStyle: {
     color: "#dbdbdb",
     textAlign: "center",
