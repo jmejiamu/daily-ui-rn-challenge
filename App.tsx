@@ -9,6 +9,7 @@ import {
   LadingScreen,
   LogInScreen,
   ProfileScreen,
+  SettingScreen,
   SignUpScreen,
 } from "./src/screens";
 import { RootStackParamList } from "./src/types/navigation/NavTypes";
@@ -87,6 +88,14 @@ const App = () => {
           }}
           name="ProfileScreen"
           component={ProfileScreen}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+            contentStyle: { backgroundColor: "#FFF" },
+          }}
+          name="SettingScreen"
+          component={SettingScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
