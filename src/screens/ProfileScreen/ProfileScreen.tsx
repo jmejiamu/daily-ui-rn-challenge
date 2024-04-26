@@ -62,11 +62,6 @@ export const ProfileScreen = () => {
       useNativeDriver: true,
     }).start();
   }, []);
-  Animated.timing(fadeAnim, {
-    toValue: 1,
-    duration: 1000,
-    useNativeDriver: true,
-  }).start();
 
   return (
     <ScrollView style={styles.mainContainer}>
