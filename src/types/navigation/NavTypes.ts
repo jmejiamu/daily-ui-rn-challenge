@@ -11,6 +11,7 @@ export type RootStackParamList = {
   AppIconScreen: undefined;
   ProfileScreen: undefined;
   SettingScreen: undefined;
+  ErrorScreen: undefined;
 };
 
 export type RootStackNames = NativeStackNavigationProp<RootStackParamList>;
@@ -53,4 +54,8 @@ export type ProfileScreenNavProps = NativeStackNavigationProp<
 export type SettingScreenNavProps = NativeStackNavigationProp<
   RootStackParamList,
   "SettingScreen"
+>;
+export type ErrorScreenNavProps = NativeStackNavigationProp<
+  RootStackParamList,
+  "ErrorScreen"
 >;

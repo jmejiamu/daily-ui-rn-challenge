@@ -5,6 +5,7 @@ import {
   CalculatorScreen,
   CheckoutScreen,
   CreditCard,
+  ErrorScreen,
   HomeScreen,
   LadingScreen,
   LogInScreen,
@@ -96,6 +97,14 @@ const App = () => {
           }}
           name="SettingScreen"
           component={SettingScreen}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+            contentStyle: { backgroundColor: "#FFF" },
+          }}
+          name="ErrorScreen"
+          component={ErrorScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
