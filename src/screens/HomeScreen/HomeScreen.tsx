@@ -48,6 +48,11 @@ export const HomeScreen = () => {
         onPress={() => navigate.navigate("ErrorScreen")}
         text="Error Challenge"
       />
+      <View style={{ margin: 10 }} />
+      <Challenge
+        onPress={() => navigate.navigate("MusicPlayerScreen")}
+        text="Music Player Challenge"
+      />
     </SafeAreaView>
   );
 };
