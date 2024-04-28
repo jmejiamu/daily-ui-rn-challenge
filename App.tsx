@@ -9,6 +9,7 @@ import {
   HomeScreen,
   LadingScreen,
   LogInScreen,
+  MusicPlayerScreen,
   ProfileScreen,
   SettingScreen,
   SignUpScreen,
@@ -105,6 +106,14 @@ const App = () => {
           }}
           name="ErrorScreen"
           component={ErrorScreen}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+            contentStyle: { backgroundColor: "#FFF" },
+          }}
+          name="MusicPlayerScreen"
+          component={MusicPlayerScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
