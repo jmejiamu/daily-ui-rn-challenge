@@ -10,3 +10,4 @@ export * from "./ProfileScreen";
 export * from "./SettingScreen";
 export * from "./ErrorScreen";
 export * from "./MusicPlayerScreen";
+export * from "./SocialShareScreen";

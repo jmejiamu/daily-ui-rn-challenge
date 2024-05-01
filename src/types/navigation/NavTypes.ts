@@ -1,4 +1,5 @@
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { SocialShareScreen } from "../../screens/SocialShareScreen/SocialShareScreen";
 
 export type RootStackParamList = {
   HomeScreen: undefined;
@@ -13,6 +14,7 @@ export type RootStackParamList = {
   SettingScreen: undefined;
   ErrorScreen: undefined;
   MusicPlayerScreen: undefined;
+  SocialShareScreen: undefined;
 };
 
 export type RootStackNames = NativeStackNavigationProp<RootStackParamList>;
@@ -63,4 +65,8 @@ export type ErrorScreenNavProps = NativeStackNavigationProp<
 export type MusicScreenNavProps = NativeStackNavigationProp<
   RootStackParamList,
   "MusicPlayerScreen"
+>;
+export type SocialShareScreenNavProps = NativeStackNavigationProp<
+  RootStackParamList,
+  "SocialShareScreen"
 >;
