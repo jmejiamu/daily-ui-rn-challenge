@@ -13,6 +13,7 @@ import {
   ProfileScreen,
   SettingScreen,
   SignUpScreen,
+  SocialShareScreen,
 } from "./src/screens";
 import { RootStackParamList } from "./src/types/navigation/NavTypes";
 
@@ -114,6 +115,14 @@ const App = () => {
           }}
           name="MusicPlayerScreen"
           component={MusicPlayerScreen}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+            contentStyle: { backgroundColor: "#FFF" },
+          }}
+          name="SocialShareScreen"
+          component={SocialShareScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
